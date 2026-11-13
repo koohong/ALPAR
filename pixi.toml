@@ -15,9 +15,17 @@ joblib = "*"
 tqdm = "*"
 pip = "*"
 pyarrow = ">=25.0.0,<26"
+matplotlib = ">=3.11.2,<4"
+jupyter = ">=1.1.1,<2"
+ipykernel = ">=7.4.0,<8"
 
 [pypi-dependencies]
 alpar = { path = ".", editable = true }
 
 [tasks]
 alpar = "alpar"
+
+# Separate prefix so a Windows install does not replace the Linux `default` env.
+[environments]
+default = { solve-group = "default" }
+notebook = { solve-group = "default" }
